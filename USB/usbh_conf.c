@@ -91,7 +91,8 @@ void HAL_HCD_MspInit(HCD_HandleTypeDef * hhcd)
 //  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
 //  GPIO_InitStruct.Pull = GPIO_NOPULL;
 //  HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
-// PCF8574_WriteBit(USB_PWR_IO,1);
+	PCF8574_WriteBit(USB_PWR_IO,1); //开启USB HOST电源供电C 
+
   /* Enable USB FS Clocks */
   __HAL_RCC_USB_OTG_FS_CLK_ENABLE();
 

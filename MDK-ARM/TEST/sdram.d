@@ -59,4 +59,7 @@ test\sdram.o: ../Inc/mpu.h
 test\sdram.o: ..\FATFS\src\ff.h
 test\sdram.o: ..\FATFS\src\ffconf.h
 test\sdram.o: ..\FATFS\src\diskio.h
+test\sdram.o: ../Inc/delay.h
+test\sdram.o: ../Inc/myiic.h
+test\sdram.o: ../Inc/pcf8574.h
 test\sdram.o: ../Inc/fmc.h

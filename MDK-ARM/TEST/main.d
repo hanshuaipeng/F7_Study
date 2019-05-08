@@ -59,6 +59,9 @@ test\main.o: ../Inc/mpu.h
 test\main.o: ..\FATFS\src\ff.h
 test\main.o: ..\FATFS\src\ffconf.h
 test\main.o: ..\FATFS\src\diskio.h
+test\main.o: ../Inc/delay.h
+test\main.o: ../Inc/myiic.h
+test\main.o: ../Inc/pcf8574.h
 test\main.o: ../Inc/dma.h
 test\main.o: ../Inc/sdmmc.h
 test\main.o: ../Inc/tim.h

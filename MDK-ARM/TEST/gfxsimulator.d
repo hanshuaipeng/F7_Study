@@ -60,3 +60,6 @@ test\gfxsimulator.o: ../Inc/mpu.h
 test\gfxsimulator.o: ..\FATFS\src\ff.h
 test\gfxsimulator.o: ..\FATFS\src\ffconf.h
 test\gfxsimulator.o: ..\FATFS\src\diskio.h
+test\gfxsimulator.o: ../Inc/delay.h
+test\gfxsimulator.o: ../Inc/myiic.h
+test\gfxsimulator.o: ../Inc/pcf8574.h

@@ -60,3 +60,6 @@ test\gpio.o: ../Inc/mpu.h
 test\gpio.o: ..\FATFS\src\ff.h
 test\gpio.o: ..\FATFS\src\ffconf.h
 test\gpio.o: ..\FATFS\src\diskio.h
+test\gpio.o: ../Inc/delay.h
+test\gpio.o: ../Inc/myiic.h
+test\gpio.o: ../Inc/pcf8574.h

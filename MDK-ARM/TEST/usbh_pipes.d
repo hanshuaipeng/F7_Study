@@ -63,6 +63,9 @@ test\usbh_pipes.o: ../Inc/mpu.h
 test\usbh_pipes.o: ..\FATFS\src\ff.h
 test\usbh_pipes.o: ..\FATFS\src\ffconf.h
 test\usbh_pipes.o: ..\FATFS\src\diskio.h
+test\usbh_pipes.o: ../Inc/delay.h
+test\usbh_pipes.o: ../Inc/myiic.h
+test\usbh_pipes.o: ../Inc/pcf8574.h
 test\usbh_pipes.o: ..\USB\STM32_USB_Host_Library\Core\Inc\usbh_def.h
 test\usbh_pipes.o: ..\USB\STM32_USB_Host_Library\Core\Inc\usbh_ioreq.h
 test\usbh_pipes.o: ..\USB\STM32_USB_Host_Library\Core\Inc\usbh_core.h

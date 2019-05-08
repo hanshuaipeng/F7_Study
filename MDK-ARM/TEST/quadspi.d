@@ -60,3 +60,6 @@ test\quadspi.o: ../Inc/mpu.h
 test\quadspi.o: ..\FATFS\src\ff.h
 test\quadspi.o: ..\FATFS\src\ffconf.h
 test\quadspi.o: ..\FATFS\src\diskio.h
+test\quadspi.o: ../Inc/delay.h
+test\quadspi.o: ../Inc/myiic.h
+test\quadspi.o: ../Inc/pcf8574.h

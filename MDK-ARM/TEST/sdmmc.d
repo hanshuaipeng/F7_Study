@@ -60,3 +60,6 @@ test\sdmmc.o: ../Inc/mpu.h
 test\sdmmc.o: ..\FATFS\src\ff.h
 test\sdmmc.o: ..\FATFS\src\ffconf.h
 test\sdmmc.o: ..\FATFS\src\diskio.h
+test\sdmmc.o: ../Inc/delay.h
+test\sdmmc.o: ../Inc/myiic.h
+test\sdmmc.o: ../Inc/pcf8574.h

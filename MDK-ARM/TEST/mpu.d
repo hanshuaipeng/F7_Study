@@ -60,3 +60,6 @@ test\mpu.o: ../Inc/mpu.h
 test\mpu.o: ..\FATFS\src\ff.h
 test\mpu.o: ..\FATFS\src\ffconf.h
 test\mpu.o: ..\FATFS\src\diskio.h
+test\mpu.o: ../Inc/delay.h
+test\mpu.o: ../Inc/myiic.h
+test\mpu.o: ../Inc/pcf8574.h

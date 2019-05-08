@@ -43,6 +43,9 @@ extern "C" {
 #include "mpu.h"
 #include "ff.h"			/* Obtains integer types */
 #include "diskio.h"		/* Declarations of disk functions */
+#include "delay.h"
+#include "myiic.h"
+#include "pcf8574.h"
 //#include "usbh_core.h"
 //#include "usbh_msc.h"
 

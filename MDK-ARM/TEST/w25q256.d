@@ -59,4 +59,7 @@ test\w25q256.o: ../Inc/mpu.h
 test\w25q256.o: ..\FATFS\src\ff.h
 test\w25q256.o: ..\FATFS\src\ffconf.h
 test\w25q256.o: ..\FATFS\src\diskio.h
+test\w25q256.o: ../Inc/delay.h
+test\w25q256.o: ../Inc/myiic.h
+test\w25q256.o: ../Inc/pcf8574.h
 test\w25q256.o: ../Inc/quadspi.h

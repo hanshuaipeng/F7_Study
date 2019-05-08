@@ -62,6 +62,9 @@ test\usbh_ioreq.o: ../Inc/mpu.h
 test\usbh_ioreq.o: ..\FATFS\src\ff.h
 test\usbh_ioreq.o: ..\FATFS\src\ffconf.h
 test\usbh_ioreq.o: ..\FATFS\src\diskio.h
+test\usbh_ioreq.o: ../Inc/delay.h
+test\usbh_ioreq.o: ../Inc/myiic.h
+test\usbh_ioreq.o: ../Inc/pcf8574.h
 test\usbh_ioreq.o: ..\USB\STM32_USB_Host_Library\Core\Inc\usbh_core.h
 test\usbh_ioreq.o: ..\USB\STM32_USB_Host_Library\Core\Inc\usbh_def.h
 test\usbh_ioreq.o: ..\USB\STM32_USB_Host_Library\Core\Inc\usbh_ioreq.h

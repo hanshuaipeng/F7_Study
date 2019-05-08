@@ -59,3 +59,6 @@ test\stm32f7xx_hal_msp.o: ../Inc/mpu.h
 test\stm32f7xx_hal_msp.o: ..\FATFS\src\ff.h
 test\stm32f7xx_hal_msp.o: ..\FATFS\src\ffconf.h
 test\stm32f7xx_hal_msp.o: ..\FATFS\src\diskio.h
+test\stm32f7xx_hal_msp.o: ../Inc/delay.h
+test\stm32f7xx_hal_msp.o: ../Inc/myiic.h
+test\stm32f7xx_hal_msp.o: ../Inc/pcf8574.h

@@ -60,3 +60,6 @@ test\ltdc.o: ../Inc/mpu.h
 test\ltdc.o: ..\FATFS\src\ff.h
 test\ltdc.o: ..\FATFS\src\ffconf.h
 test\ltdc.o: ..\FATFS\src\diskio.h
+test\ltdc.o: ../Inc/delay.h
+test\ltdc.o: ../Inc/myiic.h
+test\ltdc.o: ../Inc/pcf8574.h

@@ -60,3 +60,6 @@ test\key.o: ../Inc/mpu.h
 test\key.o: ..\FATFS\src\ff.h
 test\key.o: ..\FATFS\src\ffconf.h
 test\key.o: ..\FATFS\src\diskio.h
+test\key.o: ../Inc/delay.h
+test\key.o: ../Inc/myiic.h
+test\key.o: ../Inc/pcf8574.h

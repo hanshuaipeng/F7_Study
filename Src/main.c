@@ -80,21 +80,16 @@ static void USBH_UserProcess(USBH_HandleTypeDef * phost, uint8_t id)
             break;
         case HOST_USER_CLASS_ACTIVE:
             printf("设备连接成功!\r\n");	
-            f_mount(&fs,"3:",1); 	//重新挂载U盘
+            res=f_mount(&fs,"3:",1); 	//重新挂载U盘
 //            res=exf_getfree("3:",&total,&free);
-//        	if(res==0)
-//            {
-//                POINT_COLOR=BLUE;//设置字体为蓝色	   
-//                LCD_ShowString(30,160,200,16,16,"FATFS OK!");	
-//                LCD_ShowString(30,180,200,16,16,"U Disk Total Size:     MB");	 
-//                LCD_ShowString(30,200,200,16,16,"U Disk  Free Size:     MB"); 	    
-//                LCD_ShowNum(174,180,total>>10,5,16);//显示U盘总容量 MB
-//                LCD_ShowNum(174,200,free>>10,5,16);	
-//            }
-//            else
-//            {
-//                printf("U盘存储空间获取失败\r\n");
-//            }
+        	if(res==0)
+            {
+				printf("U盘挂载成功\r\n");
+            }
+            else
+            {
+                printf("U盘存储空间获取失败\r\n");
+            }
             break;
         case HOST_USER_CONNECTION:
             break;
@@ -163,11 +158,13 @@ int main(void)
   MX_SDMMC1_SD_Init();
 //  MX_USB_OTG_FS_HCD_Init();
   /* USER CODE BEGIN 2 */
-	read_sdinfo();//获取SD卡信息
-    SDRAM_Init();
+	W25QXX_Init();					//SPI FLASH初始化
+	delay_init(216);				//延时函数初始化，时钟频率216M
+	PCF8574_Init();				    //初始化PCF8574 
+	read_sdinfo();					//获取SD卡信息
+    SDRAM_Init();					//初始化SDRAM
 	USB_HOST_Init();
-//	MPU_Memory_Protection();//MPU内存保护配置
-	W25QXX_Init();
+//	MPU_Memory_Protection();		//MPU内存保护配置					
     LTDC_LCD_Init();
 	my_mem_init(SRAMIN);		    //初始化内部内存池
 	my_mem_init(SRAMEX);		    //初始化外部内存池
@@ -176,7 +173,7 @@ int main(void)
     HAL_TIM_Base_Start_IT(&htim3);
 	LTDC_ShowString(100,0,32,"F7 TEST");
 	
-//	res=f_mount(&fs,"0:",1);
+	res=f_mount(&fs,"0:",1);
 
 	if(res)
 	{

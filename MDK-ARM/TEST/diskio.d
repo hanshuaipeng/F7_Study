@@ -60,6 +60,9 @@ test\diskio.o: ../Inc/quadspi.h
 test\diskio.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 test\diskio.o: ../Inc/malloc.h
 test\diskio.o: ../Inc/mpu.h
+test\diskio.o: ../Inc/delay.h
+test\diskio.o: ../Inc/myiic.h
+test\diskio.o: ../Inc/pcf8574.h
 test\diskio.o: ..\USB\usbh_diskio_dma.h
 test\diskio.o: ..\USB\STM32_USB_Host_Library\Core\Inc\usbh_core.h
 test\diskio.o: ..\USB\usbh_conf.h

@@ -60,3 +60,6 @@ test\malloc.o: ../Inc/mpu.h
 test\malloc.o: ..\FATFS\src\ff.h
 test\malloc.o: ..\FATFS\src\ffconf.h
 test\malloc.o: ..\FATFS\src\diskio.h
+test\malloc.o: ../Inc/delay.h
+test\malloc.o: ../Inc/myiic.h
+test\malloc.o: ../Inc/pcf8574.h
