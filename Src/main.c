@@ -100,7 +100,7 @@ static void USBH_UserProcess(USBH_HandleTypeDef * phost, uint8_t id)
 
 void USB_HOST_Init(void)
 {
-	USBH_Init(&hUSBHost, USBH_UserProcess, 0);
+	USBH_Init(&hUSBHost, USBH_UserProcess, USBH_SPEED_FULL);
     USBH_RegisterClass(&hUSBHost, USBH_MSC_CLASS);
     USBH_Start(&hUSBHost);
 }
@@ -173,16 +173,16 @@ int main(void)
     HAL_TIM_Base_Start_IT(&htim3);
 	LTDC_ShowString(100,0,32,"F7 TEST");
 	
-	res=f_mount(&fs,"0:",1);
+//	res=f_mount(&fs,"0:",1);
 
-	if(res)
-	{
-		printf("mount error %d\r\n",res);
-	}
-	else
-	{
-		printf("mount success\r\n");
-	}
+//	if(res)
+//	{
+//		printf("mount error %d\r\n",res);
+//	}
+//	else
+//	{
+//		printf("mount success\r\n");
+//	}
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -197,7 +197,7 @@ int main(void)
       {
           case KEY0_PRES:
 			 
-			  res=f_open(&fil,"3:tttt.txt",FA_CREATE_ALWAYS|FA_WRITE);
+			  res=f_open(&fil,"3:abcd.txt",FA_CREATE_ALWAYS|FA_WRITE);
 				if(res)
 				{
 					printf("open error %d\r\n",res);
