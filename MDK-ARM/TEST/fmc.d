@@ -64,3 +64,5 @@ test\fmc.o: ../Inc/delay.h
 test\fmc.o: ../Inc/myiic.h
 test\fmc.o: ../Inc/pcf8574.h
 test\fmc.o: ..\FATFS\exfuns\exfuns.h
+test\fmc.o: ..\Chinese\text.h
+test\fmc.o: ..\Chinese\fontupd.h

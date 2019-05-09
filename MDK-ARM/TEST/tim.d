@@ -64,3 +64,5 @@ test\tim.o: ../Inc/delay.h
 test\tim.o: ../Inc/myiic.h
 test\tim.o: ../Inc/pcf8574.h
 test\tim.o: ..\FATFS\exfuns\exfuns.h
+test\tim.o: ..\Chinese\text.h
+test\tim.o: ..\Chinese\fontupd.h

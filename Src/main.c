@@ -81,10 +81,10 @@ static void USBH_UserProcess(USBH_HandleTypeDef * phost, uint8_t id)
         case HOST_USER_CLASS_ACTIVE:
             printf("设备连接成功!\r\n");	
             res=f_mount(&fs1,"3:",1); 	//重新挂载U盘
-//            res=exf_getfree("3:",&total,&free);
+            res=exf_getfree("3:",&total,&free);
         	if(res==0)
             {
-				printf("U盘挂载成功\r\n");
+				printf("U盘挂载成功,total=%d,free=%d\r\n",total,free);
             }
             else
             {
@@ -104,6 +104,74 @@ void USB_HOST_Init(void)
     USBH_RegisterClass(&hUSBHost, USBH_MSC_CLASS);
     USBH_Start(&hUSBHost);
 }
+
+void test(void)
+{
+	FIL fil;
+
+	uint8_t res;
+	uint8_t write[19]="this is write test";
+	uint8_t read[19];
+	UINT wr_bw;
+	UINT r_bw;
+	switch(Key_Scan(0))
+	{
+	  case KEY0_PRES:
+		 
+		  res=f_open(&fil,"3:abcd.txt",FA_CREATE_ALWAYS|FA_WRITE);
+			if(res)
+			{
+				printf("open error %d\r\n",res);
+			}
+			else
+			{
+				printf("open success\r\n");
+			}
+		  printf("key0 is press\r\n");
+	  break;
+	  case KEY1_PRES:
+		   res=f_write(&fil,write,19,&wr_bw);
+			if(res)
+			{
+				printf("write error %d\r\n",res);
+			}
+			else
+			{
+				printf("write success\r\n");
+			}
+		  printf("key1 is press\r\n");
+	  break;
+	  case KEY2_PRES:
+		  res=f_close(&fil);
+			if(res)
+			{
+				printf("close error %d\r\n",res);
+			}
+			else
+			{
+				printf("close success\r\n");
+			}
+		  printf("key2 is press\r\n");
+	  break;
+	  case WKUP_PRES:
+		  res=f_read(&fil,read,19,&r_bw);
+			if(res)
+			{
+				printf("read error %d\r\n",res);
+				LTDC_ShowString(0,32,32,"error\r\n");
+			}
+			else
+			{
+				printf("read success,size=%d\r\n",r_bw);
+				LTDC_ShowString(0,32,32,read);
+				
+			}
+			
+		  printf("wk_up is press\r\n");
+	  break;
+	  default : break;
+	}
+}
 /* USER CODE END 0 */
 
 /**
@@ -113,15 +181,9 @@ void USB_HOST_Init(void)
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	FIL fil;
-
-	uint8_t res;
-	uint8_t write[19]="this is write test";
-	uint8_t read[19];
-	UINT wr_bw;
-	UINT r_bw;
-	uint8_t *buf;
-	uint32_t sd_size;
+	uint8_t res=0;	  
+	uint8_t key;
+	uint8_t chinese_ok=0;
   /* USER CODE END 1 */
   
 
@@ -163,7 +225,7 @@ int main(void)
 	PCF8574_Init();				    //初始化PCF8574 
 	read_sdinfo();					//获取SD卡信息
     SDRAM_Init();					//初始化SDRAM
-	USB_HOST_Init();
+	USB_HOST_Init();				//USB
 //	MPU_Memory_Protection();		//MPU内存保护配置					
     LTDC_LCD_Init();
 	my_mem_init(SRAMIN);		    //初始化内部内存池
@@ -171,18 +233,55 @@ int main(void)
 	my_mem_init(SRAMDTCM);		    //初始化DTCM内存池
 	HAL_UART_Receive_IT(&huart1,aRecBuff,1);
     HAL_TIM_Base_Start_IT(&htim3);
-	LTDC_ShowString(100,0,32,"F7 TEST");
+//	LTDC_ShowString(100,0,32,"F7 TEST");
+	exfuns_init();
+	res=f_mount(fs[0],"0:",1);//挂载SD卡
 	
-//	res=f_mount(&fs,"0:",1);
+	if(font_init()) 		       			//检查字库
+	{
+	UPD:
+		chinese_ok=0;
+		if(res)
+		{
+			LTDC_ShowString(30,70,16,"SD Mount Failed!");
+			HAL_Delay(200);
+			LTDC_LCD_Fill(30,70,200+30,70+16,WHITE);
+			HAL_Delay(200);	
+		}
+		else
+		{
+			key=update_font(20,110,16,"0:");//更新字库
+			if(key)
+			{
+				LTDC_ShowString(30,110,16,"Font Update Failed!");
+				HAL_Delay(200);
+				LTDC_LCD_Fill(20,110,200+20,110+16,WHITE);
+				HAL_Delay(200);		
+			}
+			else
+			{
+				chinese_ok=1;
+			}
+		}
+	}
+	else
+	{
+		chinese_ok=1;
+		POINT_COLOR=RED;       
+		Show_Str(30,30,200,16,"阿波罗STM32H7开发板",16,0);				    	 
+		Show_Str(30,50,200,16,"GBK字库测试程序",16,0);				    	 
+		Show_Str(30,70,200,16,"正点原子@ALIENTEK",16,0);				    	 
+		Show_Str(30,90,200,16,"2017年8月16日",16,0);
+		Show_Str(30,110,200,16,"按KEY0,更新字库",16,0);
+		POINT_COLOR=BLUE;  
+		Show_Str(30,130,200,16,"内码高字节:",16,0);				    	 
+		Show_Str(30,150,200,16,"内码低字节:",16,0);				    	 
+		Show_Str(30,170,200,16,"汉字计数器:",16,0);
 
-//	if(res)
-//	{
-//		printf("mount error %d\r\n",res);
-//	}
-//	else
-//	{
-//		printf("mount success\r\n");
-//	}
+		Show_Str(30,200,200,32,"对应汉字为:",32,0); 
+		Show_Str(30,232,200,24,"对应汉字为:",24,0); 
+		Show_Str(30,256,200,16,"对应汉字(16*16)为:",16,0);			 
+	}
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -193,63 +292,12 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	   USBH_Process(&hUSBHost);
-	  switch(Key_Scan(0))
-      {
-          case KEY0_PRES:
-			 
-			  res=f_open(&fil,"3:abcd.txt",FA_CREATE_ALWAYS|FA_WRITE);
-				if(res)
-				{
-					printf("open error %d\r\n",res);
-				}
-				else
-				{
-					printf("open success\r\n");
-				}
-              printf("key0 is press\r\n");
-          break;
-          case KEY1_PRES:
-			   res=f_write(&fil,write,19,&wr_bw);
-				if(res)
-				{
-					printf("write error %d\r\n",res);
-				}
-				else
-				{
-					printf("write success\r\n");
-				}
-              printf("key1 is press\r\n");
-          break;
-          case KEY2_PRES:
-			  res=f_close(&fil);
-				if(res)
-				{
-					printf("close error %d\r\n",res);
-				}
-				else
-				{
-					printf("close success\r\n");
-				}
-              printf("key2 is press\r\n");
-          break;
-          case WKUP_PRES:
-			  res=f_read(&fil,read,19,&r_bw);
-				if(res)
-				{
-					printf("read error %d\r\n",res);
-					LTDC_ShowString(0,32,32,"error\r\n");
-				}
-				else
-				{
-					printf("read success,size=%d\r\n",r_bw);
-					LTDC_ShowString(0,32,32,read);
-					
-				}
-				
-              printf("wk_up is press\r\n");
-          break;
-          default : break;
-      }
+		key=Key_Scan(0);
+		if(key==KEY0_PRES)goto UPD;
+	  if(chinese_ok==1)
+	  {
+		Show_Str(30,272,200,16,"阿波罗STM32H7开发板",16,0);
+	  }
 //	  Get_KeyVul();
       HAL_Delay(50);
   }

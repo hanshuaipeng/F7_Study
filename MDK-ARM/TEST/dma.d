@@ -64,3 +64,5 @@ test\dma.o: ../Inc/delay.h
 test\dma.o: ../Inc/myiic.h
 test\dma.o: ../Inc/pcf8574.h
 test\dma.o: ..\FATFS\exfuns\exfuns.h
+test\dma.o: ..\Chinese\text.h
+test\dma.o: ..\Chinese\fontupd.h

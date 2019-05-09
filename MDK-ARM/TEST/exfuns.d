@@ -64,4 +64,6 @@ test\exfuns.o: ../Inc/delay.h
 test\exfuns.o: ../Inc/myiic.h
 test\exfuns.o: ../Inc/pcf8574.h
 test\exfuns.o: ..\FATFS\exfuns\exfuns.h
+test\exfuns.o: ..\Chinese\text.h
+test\exfuns.o: ..\Chinese\fontupd.h
 test\exfuns.o: ../Inc/usart.h

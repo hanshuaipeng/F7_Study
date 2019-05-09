@@ -63,3 +63,5 @@ test\stm32f7xx_hal_msp.o: ../Inc/delay.h
 test\stm32f7xx_hal_msp.o: ../Inc/myiic.h
 test\stm32f7xx_hal_msp.o: ../Inc/pcf8574.h
 test\stm32f7xx_hal_msp.o: ..\FATFS\exfuns\exfuns.h
+test\stm32f7xx_hal_msp.o: ..\Chinese\text.h
+test\stm32f7xx_hal_msp.o: ..\Chinese\fontupd.h

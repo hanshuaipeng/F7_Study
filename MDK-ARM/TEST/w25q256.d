@@ -63,4 +63,6 @@ test\w25q256.o: ../Inc/delay.h
 test\w25q256.o: ../Inc/myiic.h
 test\w25q256.o: ../Inc/pcf8574.h
 test\w25q256.o: ..\FATFS\exfuns\exfuns.h
+test\w25q256.o: ..\Chinese\text.h
+test\w25q256.o: ..\Chinese\fontupd.h
 test\w25q256.o: ../Inc/quadspi.h

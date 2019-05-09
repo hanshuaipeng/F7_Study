@@ -64,3 +64,5 @@ test\malloc.o: ../Inc/delay.h
 test\malloc.o: ../Inc/myiic.h
 test\malloc.o: ../Inc/pcf8574.h
 test\malloc.o: ..\FATFS\exfuns\exfuns.h
+test\malloc.o: ..\Chinese\text.h
+test\malloc.o: ..\Chinese\fontupd.h

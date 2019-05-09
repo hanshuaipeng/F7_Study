@@ -67,6 +67,8 @@
 "test\usbh_msc_scsi.o"
 "test\usbh_conf.o"
 "test\usbh_diskio_dma.o"
+"test\fontupd.o"
+"test\text.o"
 --library_type=microlib --strict --scatter "TEST\TEST.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

@@ -64,3 +64,5 @@ test\gfxsimulator.o: ../Inc/delay.h
 test\gfxsimulator.o: ../Inc/myiic.h
 test\gfxsimulator.o: ../Inc/pcf8574.h
 test\gfxsimulator.o: ..\FATFS\exfuns\exfuns.h
+test\gfxsimulator.o: ..\Chinese\text.h
+test\gfxsimulator.o: ..\Chinese\fontupd.h

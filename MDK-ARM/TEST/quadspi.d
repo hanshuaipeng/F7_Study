@@ -64,3 +64,5 @@ test\quadspi.o: ../Inc/delay.h
 test\quadspi.o: ../Inc/myiic.h
 test\quadspi.o: ../Inc/pcf8574.h
 test\quadspi.o: ..\FATFS\exfuns\exfuns.h
+test\quadspi.o: ..\Chinese\text.h
+test\quadspi.o: ..\Chinese\fontupd.h

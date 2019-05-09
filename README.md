@@ -16,4 +16,12 @@
 
 更改fatfs    #define FF_VOLUMES		4 逻辑设备数量
 
+5/19
+
+加入fatfs的部分操作代码，exfuns.c
+
+加入汉字，LCD_Chinese
+
+修改fatfs中的ffunicode.c，将里边的大数组删除，通过SD卡写入到外部flash
+
 

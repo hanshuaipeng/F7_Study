@@ -64,3 +64,5 @@ test\gpio.o: ../Inc/delay.h
 test\gpio.o: ../Inc/myiic.h
 test\gpio.o: ../Inc/pcf8574.h
 test\gpio.o: ..\FATFS\exfuns\exfuns.h
+test\gpio.o: ..\Chinese\text.h
+test\gpio.o: ..\Chinese\fontupd.h

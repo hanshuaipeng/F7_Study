@@ -64,3 +64,5 @@ test\mpu.o: ../Inc/delay.h
 test\mpu.o: ../Inc/myiic.h
 test\mpu.o: ../Inc/pcf8574.h
 test\mpu.o: ..\FATFS\exfuns\exfuns.h
+test\mpu.o: ..\Chinese\text.h
+test\mpu.o: ..\Chinese\fontupd.h

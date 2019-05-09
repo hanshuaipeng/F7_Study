@@ -63,6 +63,8 @@ test\main.o: ../Inc/delay.h
 test\main.o: ../Inc/myiic.h
 test\main.o: ../Inc/pcf8574.h
 test\main.o: ..\FATFS\exfuns\exfuns.h
+test\main.o: ..\Chinese\text.h
+test\main.o: ..\Chinese\fontupd.h
 test\main.o: ../Inc/dma.h
 test\main.o: ../Inc/sdmmc.h
 test\main.o: ../Inc/tim.h

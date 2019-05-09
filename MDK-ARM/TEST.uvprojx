@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F767xx,USE_USB_FS</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;../Drivers/STM32F7xx_HAL_Driver/Inc;../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F7xx/Include;../Drivers/CMSIS/Include;..\FATFS\src;..\USB\STM32_USB_Host_Library\Core\Inc;..\USB;..\USB\STM32_USB_Host_Library\Class\MSC\Inc;..\FATFS\exfuns</IncludePath>
+              <IncludePath>../Inc;../Drivers/STM32F7xx_HAL_Driver/Inc;../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F7xx/Include;../Drivers/CMSIS/Include;..\FATFS\src;..\USB\STM32_USB_Host_Library\Core\Inc;..\USB;..\USB\STM32_USB_Host_Library\Class\MSC\Inc;..\FATFS\exfuns;..\Chinese</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -756,6 +756,21 @@
               <FileName>usbh_diskio_dma.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\USB\usbh_diskio_dma.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>LCD_Chinese</GroupName>
+          <Files>
+            <File>
+              <FileName>fontupd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Chinese\fontupd.c</FilePath>
+            </File>
+            <File>
+              <FileName>text.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Chinese\text.c</FilePath>
             </File>
           </Files>
         </Group>

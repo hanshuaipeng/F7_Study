@@ -66,6 +66,8 @@ test\usbh_ioreq.o: ../Inc/delay.h
 test\usbh_ioreq.o: ../Inc/myiic.h
 test\usbh_ioreq.o: ../Inc/pcf8574.h
 test\usbh_ioreq.o: ..\FATFS\exfuns\exfuns.h
+test\usbh_ioreq.o: ..\Chinese\text.h
+test\usbh_ioreq.o: ..\Chinese\fontupd.h
 test\usbh_ioreq.o: ..\USB\STM32_USB_Host_Library\Core\Inc\usbh_core.h
 test\usbh_ioreq.o: ..\USB\STM32_USB_Host_Library\Core\Inc\usbh_def.h
 test\usbh_ioreq.o: ..\USB\STM32_USB_Host_Library\Core\Inc\usbh_ioreq.h

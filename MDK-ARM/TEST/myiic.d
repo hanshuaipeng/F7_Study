@@ -64,3 +64,5 @@ test\myiic.o: ../Inc/delay.h
 test\myiic.o: ../Inc/myiic.h
 test\myiic.o: ../Inc/pcf8574.h
 test\myiic.o: ..\FATFS\exfuns\exfuns.h
+test\myiic.o: ..\Chinese\text.h
+test\myiic.o: ..\Chinese\fontupd.h

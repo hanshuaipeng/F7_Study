@@ -64,3 +64,5 @@ test\key.o: ../Inc/delay.h
 test\key.o: ../Inc/myiic.h
 test\key.o: ../Inc/pcf8574.h
 test\key.o: ..\FATFS\exfuns\exfuns.h
+test\key.o: ..\Chinese\text.h
+test\key.o: ..\Chinese\fontupd.h
