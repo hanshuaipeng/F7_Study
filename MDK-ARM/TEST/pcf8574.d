@@ -63,3 +63,4 @@ test\pcf8574.o: ..\FATFS\src\diskio.h
 test\pcf8574.o: ../Inc/delay.h
 test\pcf8574.o: ../Inc/myiic.h
 test\pcf8574.o: ../Inc/pcf8574.h
+test\pcf8574.o: ..\FATFS\exfuns\exfuns.h

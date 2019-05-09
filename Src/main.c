@@ -42,7 +42,7 @@ USBH_HandleTypeDef  hUSBHost;
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-	FATFS fs;
+	FATFS fs1;
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -80,7 +80,7 @@ static void USBH_UserProcess(USBH_HandleTypeDef * phost, uint8_t id)
             break;
         case HOST_USER_CLASS_ACTIVE:
             printf("设备连接成功!\r\n");	
-            res=f_mount(&fs,"3:",1); 	//重新挂载U盘
+            res=f_mount(&fs1,"3:",1); 	//重新挂载U盘
 //            res=exf_getfree("3:",&total,&free);
         	if(res==0)
             {

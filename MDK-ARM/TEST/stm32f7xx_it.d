@@ -62,5 +62,6 @@ test\stm32f7xx_it.o: ..\FATFS\src\diskio.h
 test\stm32f7xx_it.o: ../Inc/delay.h
 test\stm32f7xx_it.o: ../Inc/myiic.h
 test\stm32f7xx_it.o: ../Inc/pcf8574.h
+test\stm32f7xx_it.o: ..\FATFS\exfuns\exfuns.h
 test\stm32f7xx_it.o: ../Inc/stm32f7xx_it.h
 test\stm32f7xx_it.o: ../Inc/usart.h

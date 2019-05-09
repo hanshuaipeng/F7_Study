@@ -57,6 +57,7 @@
 "test\ff.o"
 "test\ffsystem.o"
 "test\ffunicode.o"
+"test\exfuns.o"
 "test\usbh_core.o"
 "test\usbh_ctlreq.o"
 "test\usbh_ioreq.o"

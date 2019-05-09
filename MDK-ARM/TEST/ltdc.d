@@ -63,3 +63,4 @@ test\ltdc.o: ..\FATFS\src\diskio.h
 test\ltdc.o: ../Inc/delay.h
 test\ltdc.o: ../Inc/myiic.h
 test\ltdc.o: ../Inc/pcf8574.h
+test\ltdc.o: ..\FATFS\exfuns\exfuns.h

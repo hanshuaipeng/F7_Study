@@ -46,6 +46,7 @@ extern "C" {
 #include "delay.h"
 #include "myiic.h"
 #include "pcf8574.h"
+#include "exfuns.h"	
 //#include "usbh_core.h"
 //#include "usbh_msc.h"
 

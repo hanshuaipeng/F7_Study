@@ -63,3 +63,4 @@ test\usart.o: ..\FATFS\src\diskio.h
 test\usart.o: ../Inc/delay.h
 test\usart.o: ../Inc/myiic.h
 test\usart.o: ../Inc/pcf8574.h
+test\usart.o: ..\FATFS\exfuns\exfuns.h

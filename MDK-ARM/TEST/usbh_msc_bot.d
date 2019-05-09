@@ -66,6 +66,7 @@ test\usbh_msc_bot.o: ..\FATFS\src\diskio.h
 test\usbh_msc_bot.o: ../Inc/delay.h
 test\usbh_msc_bot.o: ../Inc/myiic.h
 test\usbh_msc_bot.o: ../Inc/pcf8574.h
+test\usbh_msc_bot.o: ..\FATFS\exfuns\exfuns.h
 test\usbh_msc_bot.o: ..\USB\STM32_USB_Host_Library\Core\Inc\usbh_def.h
 test\usbh_msc_bot.o: ..\USB\STM32_USB_Host_Library\Core\Inc\usbh_ioreq.h
 test\usbh_msc_bot.o: ..\USB\STM32_USB_Host_Library\Core\Inc\usbh_core.h

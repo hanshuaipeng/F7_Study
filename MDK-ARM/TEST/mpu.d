@@ -63,3 +63,4 @@ test\mpu.o: ..\FATFS\src\diskio.h
 test\mpu.o: ../Inc/delay.h
 test\mpu.o: ../Inc/myiic.h
 test\mpu.o: ../Inc/pcf8574.h
+test\mpu.o: ..\FATFS\exfuns\exfuns.h

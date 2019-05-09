@@ -63,3 +63,4 @@ test\sdmmc.o: ..\FATFS\src\diskio.h
 test\sdmmc.o: ../Inc/delay.h
 test\sdmmc.o: ../Inc/myiic.h
 test\sdmmc.o: ../Inc/pcf8574.h
+test\sdmmc.o: ..\FATFS\exfuns\exfuns.h

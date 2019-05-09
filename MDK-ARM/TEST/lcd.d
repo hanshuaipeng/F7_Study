@@ -62,5 +62,6 @@ test\lcd.o: ..\FATFS\src\diskio.h
 test\lcd.o: ../Inc/delay.h
 test\lcd.o: ../Inc/myiic.h
 test\lcd.o: ../Inc/pcf8574.h
+test\lcd.o: ..\FATFS\exfuns\exfuns.h
 test\lcd.o: ../Inc/ltdc.h
 test\lcd.o: ../Inc/font.h

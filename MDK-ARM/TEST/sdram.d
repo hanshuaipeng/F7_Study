@@ -62,4 +62,5 @@ test\sdram.o: ..\FATFS\src\diskio.h
 test\sdram.o: ../Inc/delay.h
 test\sdram.o: ../Inc/myiic.h
 test\sdram.o: ../Inc/pcf8574.h
+test\sdram.o: ..\FATFS\exfuns\exfuns.h
 test\sdram.o: ../Inc/fmc.h
