@@ -26,6 +26,7 @@
 #include "sdmmc.h"
 #include "tim.h"
 #include "usart.h"
+#include "usb_otg.h"
 #include "gpio.h"
 #include "fmc.h"
 
@@ -218,7 +219,6 @@ int main(void)
   MX_LTDC_Init();
   MX_QUADSPI_Init();
   MX_SDMMC1_SD_Init();
-//  MX_USB_OTG_FS_HCD_Init();
   /* USER CODE BEGIN 2 */
 	W25QXX_Init();					//SPI FLASH初始化
 	delay_init(216);				//延时函数初始化，时钟频率216M

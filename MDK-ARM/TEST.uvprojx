@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F767xx,USE_USB_FS</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;../Drivers/STM32F7xx_HAL_Driver/Inc;../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F7xx/Include;../Drivers/CMSIS/Include;..\FATFS\src;..\USB\STM32_USB_Host_Library\Core\Inc;..\USB;..\USB\STM32_USB_Host_Library\Class\MSC\Inc;..\FATFS\exfuns;..\Chinese</IncludePath>
+              <IncludePath>../Inc; ../Drivers/STM32F7xx_HAL_Driver/Inc; ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy; ../Drivers/CMSIS/Device/ST/STM32F7xx/Include; ../Drivers/CMSIS/Include; ..\FATFS\src; ..\USB\STM32_USB_Host_Library\Core\Inc; ..\USB; ..\USB\STM32_USB_Host_Library\Class\MSC\Inc; ..\FATFS\exfuns; ..\Chinese</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -428,6 +428,21 @@
               <FilePath>..\Src\mpu.c</FilePath>
             </File>
             <File>
+              <FileName>myiic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\myiic.c</FilePath>
+            </File>
+            <File>
+              <FileName>delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>pcf8574.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\pcf8574.c</FilePath>
+            </File>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/main.c</FilePath>
@@ -481,21 +496,6 @@
               <FileName>stm32f7xx_hal_msp.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/stm32f7xx_hal_msp.c</FilePath>
-            </File>
-            <File>
-              <FileName>myiic.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\myiic.c</FilePath>
-            </File>
-            <File>
-              <FileName>delay.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\delay.c</FilePath>
-            </File>
-            <File>
-              <FileName>pcf8574.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\pcf8574.c</FilePath>
             </File>
           </Files>
         </Group>
