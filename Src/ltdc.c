@@ -230,7 +230,7 @@ void LTDC_LCD_Init(void)
 	ltdc_framebuf[0]=(uint32_t*)&ltdc_lcd_framebuf;
 	LTDC_Select_Layer(0);
 	LTDC_Layer_Window_Config(0,0,0,lcdltdc.pwidth,lcdltdc.pheight);	//层窗口配置,以LCD面板坐标系为基准,不要随便修改!
-    LTDC_Display_Dir(0);//横屏
+    LTDC_Display_Dir(0);//1,横屏
 	LTDC_LCD_ON;//lcd背光
     LTDC_LCD_Clear(WHITE);
 }

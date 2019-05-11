@@ -71,6 +71,7 @@ test\main.o: ../Inc/tim.h
 test\main.o: ../Inc/usart.h
 test\main.o: ../Inc/usb_otg.h
 test\main.o: ../Inc/gpio.h
+test\main.o: ..\TOUCH\gt9147.h
 test\main.o: ..\USB\STM32_USB_Host_Library\Core\Inc\usbh_core.h
 test\main.o: ..\USB\usbh_conf.h
 test\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h

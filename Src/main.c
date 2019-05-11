@@ -29,7 +29,7 @@
 #include "usb_otg.h"
 #include "gpio.h"
 #include "fmc.h"
-
+#include "gt9147.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "usbh_core.h"
@@ -173,6 +173,7 @@ void test(void)
 	  default : break;
 	}
 }
+
 /* USER CODE END 0 */
 
 /**
@@ -228,11 +229,13 @@ int main(void)
 	USB_HOST_Init();				//USB
 //	MPU_Memory_Protection();		//MPU内存保护配置					
     LTDC_LCD_Init();
+	GT9147_Init();
 	my_mem_init(SRAMIN);		    //初始化内部内存池
 	my_mem_init(SRAMEX);		    //初始化外部内存池
 	my_mem_init(SRAMDTCM);		    //初始化DTCM内存池
 	HAL_UART_Receive_IT(&huart1,aRecBuff,1);
     HAL_TIM_Base_Start_IT(&htim3);
+	
 //	LTDC_ShowString(100,0,32,"F7 TEST");
 	exfuns_init();
 	res=f_mount(fs[0],"0:",1);//挂载SD卡
@@ -291,12 +294,14 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+//	  GT9147_Scan(0);
+	  ctp_test();
 	   USBH_Process(&hUSBHost);
 		key=Key_Scan(0);
 		if(key==KEY0_PRES)goto UPD;
 	  if(chinese_ok==1)
 	  {
-		Show_Str(30,272,200,16,"阿波罗STM32H7开发板",16,0);
+		Show_Str(30,272,200,16,"韩帅鹏",12,0);
 	  }
 //	  Get_KeyVul();
       HAL_Delay(50);

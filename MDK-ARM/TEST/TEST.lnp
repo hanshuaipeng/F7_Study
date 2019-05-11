@@ -69,6 +69,8 @@
 "test\usbh_diskio_dma.o"
 "test\fontupd.o"
 "test\text.o"
+"test\ctiic.o"
+"test\gt9147.o"
 --library_type=microlib --strict --scatter "TEST\TEST.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
