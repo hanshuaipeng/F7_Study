@@ -335,8 +335,8 @@ void ctp_test(void)
  	uint16_t lastpos[10][2];		//最后一次的数据 
 	uint8_t maxp=5;
 	
-	while(1)
-	{
+//	while(1)
+//	{
 		 GT9147_Scan(0);
 		for(t=0;t<maxp;t++)
 		{
@@ -358,8 +358,8 @@ void ctp_test(void)
 					}
 				}
 			}else lastpos[t][0]=0XFFFF;
-		} 
-		HAL_Delay(5);
+//		} 
+//		HAL_Delay(5);
 	}	
 }
 

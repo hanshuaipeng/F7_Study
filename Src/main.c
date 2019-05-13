@@ -305,7 +305,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 //	  GT9147_Scan(0);
-	  ctp_test();
+//	  ctp_test();
 //	   USBH_Process(&hUSBHost);
 		key=Key_Scan(0);
 		if(key==KEY0_PRES)goto UPD;

@@ -79,3 +79,4 @@ test\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 test\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 test\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 test\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+test\freertos.o: ..\TOUCH\gt9147.h
