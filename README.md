@@ -24,4 +24,8 @@
 
 修改fatfs中的ffunicode.c，将里边的大数组删除，通过SD卡写入到外部flash
 
+5/13增加freertos待测试
+
+	usbh_conf.h	开启rtos支持  #define USBH_USE_OS                           1
+
 
