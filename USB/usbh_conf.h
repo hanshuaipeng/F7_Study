@@ -53,6 +53,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "main.h"
+
 /* Exported types ----------------------------------------------------------- */
 #define USBH_MAX_NUM_ENDPOINTS                2
 #define USBH_MAX_NUM_INTERFACES               2
@@ -62,7 +63,7 @@
 #define USBH_MAX_SIZE_CONFIGURATION           0x200
 #define USBH_MAX_DATA_BUFFER                  0x200
 #define USBH_DEBUG_LEVEL                      2
-#define USBH_USE_OS                           1
+#define USBH_USE_OS                           0
 
 /* Exported constants ------------------------------------------------------- */
 /* Exported macro ----------------------------------------------------------- */
@@ -70,6 +71,7 @@
 #if (USBH_USE_OS == 1)
 #include "cmsis_os.h"
 #define   USBH_PROCESS_PRIO    osPriorityNormal
+#define		USBH_PROCESS_STACK_SIZE	512
 #endif
 
 /* Memory management macros */

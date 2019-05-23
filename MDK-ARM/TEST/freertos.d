@@ -80,3 +80,14 @@ test\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 test\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 test\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 test\freertos.o: ..\TOUCH\gt9147.h
+test\freertos.o: ..\USB\STM32_USB_Host_Library\Core\Inc\usbh_core.h
+test\freertos.o: ..\USB\usbh_conf.h
+test\freertos.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+test\freertos.o: ..\USB\STM32_USB_Host_Library\Core\Inc\usbh_def.h
+test\freertos.o: ..\USB\STM32_USB_Host_Library\Core\Inc\usbh_ioreq.h
+test\freertos.o: ..\USB\STM32_USB_Host_Library\Core\Inc\usbh_core.h
+test\freertos.o: ..\USB\STM32_USB_Host_Library\Core\Inc\usbh_pipes.h
+test\freertos.o: ..\USB\STM32_USB_Host_Library\Core\Inc\usbh_ctlreq.h
+test\freertos.o: ..\USB\STM32_USB_Host_Library\Class\MSC\Inc\usbh_msc.h
+test\freertos.o: ..\USB\STM32_USB_Host_Library\Class\MSC\Inc\usbh_msc_bot.h
+test\freertos.o: ..\USB\STM32_USB_Host_Library\Class\MSC\Inc\usbh_msc_scsi.h

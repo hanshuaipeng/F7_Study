@@ -228,7 +228,7 @@ int main(void)
 	PCF8574_Init();				    //初始化PCF8574 
 	read_sdinfo();					//获取SD卡信息
     SDRAM_Init();					//初始化SDRAM
-//	USB_HOST_Init();				//USB
+	USB_HOST_Init();				//USB
 //	MPU_Memory_Protection();		//MPU内存保护配置					
     LTDC_LCD_Init();
 	GT9147_Init();

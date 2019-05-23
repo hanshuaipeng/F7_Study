@@ -332,7 +332,7 @@ const uint16_t POINT_COLOR_TBL[10]={RED,GREEN,BLUE,BROWN,GRED,BRED,GBLUE,BRRED,G
 void ctp_test(void)
 {
 	uint8_t t=0;  	    
- 	uint16_t lastpos[10][2];		//最后一次的数据 
+ 	static uint16_t lastpos[10][2];		//最后一次的数据 
 	uint8_t maxp=5;
 	
 //	while(1)

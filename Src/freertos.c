@@ -27,11 +27,13 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */     
 #include "gt9147.h"
+#include "usbh_core.h"
+#include "usbh_msc.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-
+extern USBH_HandleTypeDef  hUSBHost;
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -49,13 +51,14 @@
 
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
-
+osThreadId defaultTaskHandle1;
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
 extern void USB_HOST_Init(void);
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void const * argument);
+void StartDefaultTask1(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -87,10 +90,11 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 512);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
+  
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
 
@@ -107,16 +111,32 @@ void StartDefaultTask(void const * argument)
 {
 
   /* USER CODE BEGIN StartDefaultTask */
-	USB_HOST_Init();				//USB
+//	USB_HOST_Init();				//USB
+//	osThreadDef(defaultTask1, StartDefaultTask1, osPriorityAboveNormal, 0, 512);
+//	defaultTaskHandle1 = osThreadCreate(osThread(defaultTask1), NULL);
+//	osThreadTerminate(defaultTaskHandle);
   /* Infinite loop */
   for(;;)
   {
 	 ctp_test();
+	  USBH_Process(&hUSBHost);
     osDelay(5);
   }
   /* USER CODE END StartDefaultTask */
 }
+void StartDefaultTask1(void const * argument)
+{
 
+  /* USER CODE BEGIN StartDefaultTask */
+  /* Infinite loop */
+  for(;;)
+  {
+//	 ctp_test();
+//	  USBH_Process(&hUSBHost);
+    osDelay(50);
+  }
+  /* USER CODE END StartDefaultTask */
+}
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
      

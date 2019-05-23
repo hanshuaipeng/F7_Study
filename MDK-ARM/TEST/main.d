@@ -87,7 +87,6 @@ test\main.o: ../Inc/gpio.h
 test\main.o: ..\USB\STM32_USB_Host_Library\Core\Inc\usbh_core.h
 test\main.o: ..\USB\usbh_conf.h
 test\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-test\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 test\main.o: ..\USB\STM32_USB_Host_Library\Core\Inc\usbh_def.h
 test\main.o: ..\USB\STM32_USB_Host_Library\Core\Inc\usbh_ioreq.h
 test\main.o: ..\USB\STM32_USB_Host_Library\Core\Inc\usbh_core.h
