@@ -26,6 +26,9 @@
 
 5/13增加freertos待测试
 
-	usbh_conf.h	开启rtos支持  #define USBH_USE_OS                           1
+	usbh_conf.h 开启  #define USBH_USE_OS  1后由问题，暂时不支持，
+5/23 freertos+usb测试成功
+
+程序功能有，SD卡，FATFS,FREERTOS  USBH  触摸屏，汉字显示，SDRAM
 
 
